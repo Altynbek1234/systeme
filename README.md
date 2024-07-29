@@ -24,4 +24,4 @@ POST: для осуществления покупки
 curl -X POST http://127.0.0.1:8337/purchase \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
--d '{"product": 4, "taxNumber": "IT12345678900", "couponCode": "D15", "paymentProcessor": "paypal"}'
+-d '{"product": 1, "taxNumber": "IT12345678900", "couponCode": "D15", "paymentProcessor": "paypal"}'
