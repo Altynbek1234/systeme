@@ -7,8 +7,8 @@
 3) Открыть в терминале директорию проекта;
 4) Запустить в терминале команду "docker-compose up -d --build" ;
 5) Запустить в терминале cp .env_example .env чтобы настроить env файл;
-6) Запустить в терминале команду docker exec -it systeme-sio_test-1 composer install;
-7) Запустить в терминале команду docker exec -it systeme-sio_test-1 php bin/console doctrine:migrations:migrate чтобы создать таблицы и заполнить их;
+6) Запустить в терминале команду docker exec -it systeme_sio_test_1 composer install;
+7) Запустить в терминале команду docker exec -it systeme_sio_test_1 php bin/console doctrine:migrations:migrate чтобы создать таблицы и заполнить их;
 
 
 POST: для расчёта цены
