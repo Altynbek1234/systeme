@@ -1,13 +1,30 @@
+version: '3.8'
+
 services:
-    sio_test:
-        user: app
-        build:
-            context: .
-            args:
-                USER_ID: ${USER_ID:-1000}
-        ports:
-            - "8337:8337"
-        volumes:
-            - .:/app:rw
-        environment:
-            - APP_ENV=dev
+  sio_test:
+    user: app
+    build:
+      context: .
+      args:
+        USER_ID: ${USER_ID:-1000}
+    ports:
+      - "8337:8337"
+    volumes:
+      - .:/app:rw
+    environment:
+      - APP_ENV=dev
+      - DATABASE_URL=pgsql://postgres:password@db:5432/mydatabase
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
